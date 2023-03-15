@@ -1,12 +1,13 @@
 {
     'name': 'Cyder Travel Log',
-    'version': '16.0.1.1.0',
+    'version': '15.0.1.1.0',
     'summary': 'Extends fleet to add travel information',
     'category': 'Productivity',
+    'author': 'Cyder Solutions',
+    'website': 'https://www.cyder.com.au',
     'description': """
 Extends fleet to add travel information
 """,
-    'website': 'www.cyder.com.au',
     'depends': ['fleet'],
     'data': [
         'views/trips.xml'
