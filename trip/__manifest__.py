@@ -1,6 +1,6 @@
 {
     'name': 'Cyder Travel Log',
-    'version': '15.0.1.1.0',
+    'version': '16.0.1.1.0',
     'summary': 'Extends fleet to add travel information',
     'category': 'Productivity',
     'description': """
@@ -15,5 +15,5 @@ Extends fleet to add travel information
     'application': True,
     'auto_install': False,
     'license': 'LGPL-3',
-    'sequence': -101,
+    'sequence': -90,
 }
