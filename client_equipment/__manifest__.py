@@ -22,6 +22,7 @@
     'demo': [],
     'installable': True,
     'application': True,
+    'images': ['static/description/banner.gif'],
     'auto_install': False,
     'license': 'LGPL-3',
 }
