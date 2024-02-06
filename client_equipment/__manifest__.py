@@ -2,7 +2,7 @@
 
 {
     'name': 'Client Equipment',
-    'version': '16.0.1.0.2',
+    'version': '1.0.2',
     'category': 'Productivity',
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au/',
@@ -23,5 +23,5 @@
     'installable': True,
     'application': True,
     'auto_install': False,
-    'license': 'OPL-1'
+    'license': 'LGPL-3',
 }

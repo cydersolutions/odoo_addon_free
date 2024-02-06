@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="_view_cs_car_pool_bookings_tree" model="ir.ui.view">
+        <field name="name">cs_car_pool.bookings.tree</field>
+        <field name="model">cs_car_pool.bookings</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cs_car_pool_bookings_form" model="ir.ui.view">
+        <field name="name">cs_car_pool.bookings.form</field>
+        <field name="model">cs_car_pool.bookings</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="vehicle_id"/>
+                        <field name="driver_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="_view_cs_car_pool_bookings_calendar" model="ir.ui.view">
+        <field name="name">cs_car_pool.bookings.calendar</field>
+        <field name="model">cs_car_pool.bookings</field>
+        <field name="arch" type="xml">
+            <calendar string="bookings" date_start="start_date"  date_stop="end_date"
+                      quick_create="False" color="vehicle_id"
+                      event_limit="5" event_open_popup="True">
+                <field name="driver_id" filters="1"/>
+                <field name="vehicle_id" filters="1"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_cs_car_pool_bookings_search" model="ir.ui.view">
+        <field name="name">cs_car_pool_bookings.search</field>
+        <field name="model">cs_car_pool.bookings</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="vehicle_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_cs_car_pool_bookings" model="ir.actions.act_window">
+        <field name="name">bookings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cs_car_pool.bookings</field>
+        <field name="view_mode">calendar</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+
+            <p class="'o_view_nocontent_smiling_face">
+                Add your bookings!
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_cs_car_pool_bookings"
+            name="Bookings"
+            action="action_cs_car_pool_bookings"
+            parent="menu_cs_car_pool_root"
+            sequence="20"/>
+</odoo>
