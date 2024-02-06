@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.cs_car_pool.user,access_cs_car_pool.user,cs_car_pool.model_cs_car_pool_cs_car_pool,group_cs_car_pool_user,1,1,0,0
+access.cs_car_pool.vehicles.user,access_cs_car_pool.vehicles.user,model_cs_car_pool_vehicles,group_cs_car_pool_user,1,1,0,0
+
+access.cs_car_pool.admin,access_cs_car_pool.admin,cs_car_pool.model_cs_car_pool_cs_car_pool,group_cs_car_pool_manager,1,1,1,1
+access.cs_car_pool.vehicles.admin,access_cs_car_pool.vehicles.admin,model_cs_car_pool_vehicles,group_cs_car_pool_manager,1,1,1,1
+
+access.cs_car_pool.admin,access_cs_car_pool.admin,cs_car_pool.model_cs_car_pool_cs_car_pool,group_cs_car_pool_manager,1,1,1,1
+access.cs_car_pool.bookings.admin,access_cs_car_pool.bookings.admin,model_cs_car_pool_bookings,group_cs_car_pool_manager,1,1,1,1
