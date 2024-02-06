@@ -5,9 +5,7 @@
     'category': 'Business',
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au/',
-    'price': '3000.0',
-    'currency': 'USD',
-    'sequence': -100,
+    'sequence': 10,
     'summary': 'Cs_car_pool',
     'description': """
     Cs_car_pool Program
@@ -29,5 +27,5 @@
     'images': ['static/description/banner.gif'],
     'application': True,
     'auto_install': False,
-    'license': 'OPL-1'
+    'license': 'LGPL-3',
 }
