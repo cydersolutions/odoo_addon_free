@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Car Pool',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'Business',
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au/',
     'sequence': 10,
-    'summary': 'Cs_car_pool',
+    'summary': 'Car Pool',
     'description': """
-    Cs_car_pool Program
+    Car Pool Program
     """,
     'depends': ['mail','hr'],
     'data': [
