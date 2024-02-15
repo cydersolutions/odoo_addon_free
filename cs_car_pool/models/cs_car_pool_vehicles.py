@@ -10,5 +10,6 @@ class Cs_car_poolVehicles(models.Model):
     veh_model = fields.Char('Model')
     veh_capacity = fields.Char('Engine Capacity')
     date_of_manufacture = fields.Date(string="Date of Manufacture")
+    veh_inspection_url = fields.Char(string="Inspection URL")
     veh_last_reading = fields.Integer("Last Reading")
     active = fields.Boolean(default=True)

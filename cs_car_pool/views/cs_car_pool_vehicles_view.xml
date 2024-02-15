@@ -10,6 +10,7 @@
                 <field name="veh_model"/>
                 <field name="veh_capacity"/>
                 <field name="date_of_manufacture"/>
+                <field name="veh_inspection_url"/>
 <!--                <field name="active" invisible="true"/>-->
             </tree>
         </field>
@@ -30,6 +31,7 @@
                         <field name="veh_model"/>
                         <field name="veh_capacity"/>
                         <field name="date_of_manufacture"/>
+                        <field name="veh_inspection_url"/>
                         <field name="veh_last_reading"/>
 <!--                        <field name="active" invisible="true"/>-->
                     </group>
