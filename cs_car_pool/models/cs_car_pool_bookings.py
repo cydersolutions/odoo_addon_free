@@ -18,7 +18,21 @@ class Cs_car_poolBookings(models.Model):
 
     @api.model
     def create(self, vals):
+        # the end date must be later than the current time/date.
+        if vals['end_date'] < str(datetime.now()):
+            raise ValidationError(_("A booking cannot be made in the past"))
+
         vals['ref'] = self.env['ir.sequence'].next_by_code('cs_car_pool_booking.sequence')
+
+        # Check to see if there are already bookings for this vehicle with overlapping dates
+        booking_count = self.env['cs_car_pool.bookings'].search_count([
+            ('start_date', '>=', vals['start_date']),
+            ('end_date', '<=', vals['end_date']),
+            ('vehicle_id', '=', vals['vehicle_id'])])
+        if booking_count:
+            raise ValidationError(
+                _("There appears to be an active booking for this vehicle at that time"))
+
         return super(Cs_car_poolBookings, self).create(vals)
 
     def action_send_booking_email(self):

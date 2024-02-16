@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Car Pool',
-    'version': '1.2.1',
+    'version': '1.2.2',
     'category': 'Business',
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au/',
