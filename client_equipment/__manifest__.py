@@ -20,6 +20,7 @@
         'report/service_history_report.xml',
     ],
     'demo': [],
+    'images': ['static/description/banner.gif'],
     'installable': True,
     'application': True,
     'auto_install': False,
