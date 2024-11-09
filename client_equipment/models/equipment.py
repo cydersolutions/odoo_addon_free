@@ -24,6 +24,7 @@ class EquipmentDetails(models.Model):
     city = fields.Char('City')
     state = fields.Many2one("res.country.state", string='State')
     country = fields.Many2one('res.country', string='Country')
+    warranty_expiration = fields.Date(string="Warranty Expiration")
     site_contact = fields.Char(string="Site Contact")
     site_phone = fields.Char(string="Site Phone")
 
