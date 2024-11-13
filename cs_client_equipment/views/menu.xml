@@ -3,7 +3,7 @@
     <menuitem
             id="menu_client_equipment"
             name="Client Equipment"
-            web_icon="client_equipment,static/description/icon.png"
+            web_icon="cs_client_equipment,static/description/icon.png"
             sequence="10"/>
 
   <menuitem

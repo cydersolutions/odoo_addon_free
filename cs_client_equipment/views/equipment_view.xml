@@ -8,11 +8,11 @@
             <list>
                 <field name="name"/>
                 <field name="category_id" optional="hide"/>
-                <field name="client"/>
-                <field name="manufacturer_id"/>
-                <field name="ref"/>
-                <field name="model"/>
-                <field name="serial_no"/>
+                <field name="client" optional="show"/>
+                <field name="manufacturer_id" optional="show"/>
+                <field name="ref" optional="show"/>
+                <field name="model" optional="show"/>
+                <field name="serial_no" optional="show"/>
                 <field name="location" optional="hide"/>
                 <field name="warranty_expiration" optional="hide"/>
             </list>
@@ -23,7 +23,9 @@
         <field name="model">equipment.details</field>
         <field name="arch" type="xml">
             <form>
+                <header/>
                 <sheet>
+                    <div class="oe_button_box" name="button_box"/>
                     <field name="image" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <label for="name"/>
@@ -32,7 +34,7 @@
                     <group>
                         <group>
                             <field name="category_id"/>
-                            <field name="client"/>
+                            <field name="client" string="Owner"/>
                             <label for="street" string="Equipment Address"/>
                             <div class="o_address_format">
                                 <field name="street" placeholder="Street..." class="o_address_street"/>
