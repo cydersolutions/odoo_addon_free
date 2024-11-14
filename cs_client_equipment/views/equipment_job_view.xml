@@ -25,6 +25,7 @@
                             <field name="serial_no"/>
                             <field name="equipment" options="{'no_create_edit':True, 'no_create':True}"/>
                             <field name="assignee"/>
+                            <field name="warranty_expiration"/>
                         </group>
                         <group>
                             <field name="model"/>

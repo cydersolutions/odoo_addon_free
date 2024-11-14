@@ -39,6 +39,7 @@ class EquipmentJobs(models.Model):
     note = fields.Html(string='Note')
     site_contact = fields.Char(string="Site Contact")
     site_phone = fields.Char(string="Site Phone")
+    warranty_expiration = fields.Date(string="Warranty Expiration")
 
 
 
@@ -55,6 +56,7 @@ class EquipmentJobs(models.Model):
         self.state = self.equipment.state
         self.country = self.equipment.country
         self.note = self.equipment.note
+        self.warranty_expiration = self.equipment.warranty_expiration
 
 
     @api.onchange('serial_no')
