@@ -16,7 +16,7 @@
     'category': 'Productivity',
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au/',
-    'sequence': 10,
+    'sequence': -40,
     'summary': 'Client Tool Management',
     'description': """Client Tool Management""",
     'depends':['mail', 'hr'],
