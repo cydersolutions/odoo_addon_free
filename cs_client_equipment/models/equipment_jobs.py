@@ -25,6 +25,7 @@ class EquipmentJobs(models.Model):
     location = fields.Char('Equipment Location')
     model = fields.Char('Model')
     serial_no = fields.Char('Serial Number', copy=False)
+    asset_tag = fields.Char('Asset Tag', copy=False)
     issues = fields.Html(string="Issues")
     report = fields.Html('Report')
     task_id = fields.Integer('Task')
@@ -40,9 +41,7 @@ class EquipmentJobs(models.Model):
     site_contact = fields.Char(string="Site Contact")
     site_phone = fields.Char(string="Site Phone")
     warranty_expiration = fields.Date(string="Warranty Expiration")
-
-
-
+    owner = fields.Many2one('res.partner', string="Owner")
 
     @api.onchange('equipment')
     def onchange_equipment(self):
@@ -57,6 +56,8 @@ class EquipmentJobs(models.Model):
         self.country = self.equipment.country
         self.note = self.equipment.note
         self.warranty_expiration = self.equipment.warranty_expiration
+        self.owner = self.equipment.client
+        self.asset_tag = self.equipment.asset_tag
 
 
     @api.onchange('serial_no')

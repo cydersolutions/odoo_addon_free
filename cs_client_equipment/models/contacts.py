@@ -20,6 +20,22 @@ class ResPartner(models.Model):
 
     site_phone = fields.Char(string="Site Phone")
 
+    equipment_count = fields.Integer(string="Equipment", compute='_compute_equipment_count')
 
+
+    def _compute_equipment_count(self):
+        for rec in self:
+            rec.equipment_count = rec.env['equipment.details'].search_count([('client', '=', rec.id)])
+
+
+    def listEquipment(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Equipment',
+            'view_mode': 'list,form',
+            'res_model': 'equipment.details',
+            'domain': [('client.id', '=', self.id)],
+            'target': 'current',
+        }
 
 

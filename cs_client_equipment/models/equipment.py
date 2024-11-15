@@ -24,6 +24,7 @@ class EquipmentDetails(models.Model):
     client = fields.Many2one('res.partner', string='Client', tracking=True)
     manufacturer_id = fields.Many2one('equipment.manufacturer', string='Manufacturer')
     ref = fields.Char('Reference')
+    asset_tag = fields.Char('Asset Tag')
     location = fields.Char('Equipment Location')
     address = fields.Char('Equipment Address')
     model = fields.Char('Model')
@@ -79,7 +80,8 @@ class EquipmentDetails(models.Model):
             return super(EquipmentDetails, self).copy(default)
 
     _sql_constraints = [
-        ('unique_equipment_serial_no', 'unique (serial_no)', 'Serial No must be unique.')
+        ('unique_equipment_serial_no', 'unique (serial_no)', 'Serial No must be unique.'),
+        ('unique_equipment_asset_tag', 'unique (asset_tag)', 'Asset Tags must be unique.'),
     ]
 
 class EquipmentCategory(models.Model):

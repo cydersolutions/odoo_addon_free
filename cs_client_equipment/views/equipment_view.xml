@@ -12,6 +12,7 @@
                 <field name="manufacturer_id" optional="show"/>
                 <field name="ref" optional="show"/>
                 <field name="model" optional="show"/>
+                <field name="asset_tag" optional="show"/>
                 <field name="serial_no" optional="show"/>
                 <field name="location" optional="hide"/>
                 <field name="warranty_expiration" optional="hide"/>
@@ -51,6 +52,7 @@
                             <field name="manufacturer_id"/>
                             <field name="ref"/>
                             <field name="model"/>
+                            <field name="asset_tag"/>
                             <field name="serial_no"/>
                             <field name="latitude" widget="maps"/>
                             <field name="longitude" widget="maps"/>

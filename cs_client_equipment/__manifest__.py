@@ -11,7 +11,7 @@
 #################################################################################
 
 {
-    'name': 'Client Equipment',
+    'name': 'Client Equipment (18.0)',
     'version': '1.0.3',
     'category': 'Productivity',
     'author': 'Cyder Solutions',
@@ -27,6 +27,7 @@
         'views/menu.xml',
         'views/equipment_view.xml',
         'views/equipment_job_view.xml',
+        'views/res_partner.xml',
         'report/service_history_report.xml',
     ],
     'demo': [],

@@ -10,6 +10,7 @@
                 <field name="serial_no" optional="show"/>
                 <field name="service_date"/>
                 <field name="model" optional="hide"/>
+                <field name="asset_tag" optional="hide"/>
                 <field name="location" optional="hide"/>
             </list>
         </field>
@@ -29,6 +30,7 @@
                         </group>
                         <group>
                             <field name="model"/>
+                            <field name="asset_tag"/>
                             <field name="location"/>
                             <field name="service_date"/>
                         </group>
