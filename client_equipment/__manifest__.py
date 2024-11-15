@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Client Equipment (17.0)',
+    'name': 'Client Equipment (17.0 and earlier)',
     'version': '1.0.2',
     'category': 'Productivity',
     'author': 'Cyder Solutions',
