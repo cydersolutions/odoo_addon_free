@@ -15,10 +15,10 @@
     'version': '1.0.3',
     'category': 'Productivity',
     'author': 'Cyder Solutions',
-    'website': 'https://www.cyder.com.au/',
+    'website': 'https://www.cyder.com.au',
     'sequence': -40,
     'summary': 'Client Tool Management',
-    'description': """Client Tool Management""",
+    'description': """Client Equipment Management""",
     'depends':['mail', 'hr'],
     'data': [
         'security/client_equipment_security_groups.xml',
