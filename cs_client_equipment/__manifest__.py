@@ -17,7 +17,7 @@
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au',
     'sequence': -40,
-    'summary': 'Client Equipment Management',
+    'summary': 'Client Equipment Base',
     'description': """Client Equipment Management""",
     'depends':['mail', 'hr'],
     'data': [
