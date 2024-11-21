@@ -11,7 +11,7 @@
 #################################################################################
 
 {
-    'name': 'Client Equipment (18.0)',
+    'name': 'Client Equipment (Updated for 18.0)',
     'version': '1.0.4',
     'category': 'Productivity',
     'author': 'Cyder Solutions',
@@ -30,7 +30,9 @@
         'views/res_partner.xml',
         'report/service_history_report.xml',
     ],
-    'demo': [],
+    'demo': [
+        'data/client_equipment_demo.xml',
+    ],
     'images': ['static/description/banner.gif'],
     'installable': True,
     'application': True,
