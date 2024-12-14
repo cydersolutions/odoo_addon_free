@@ -64,7 +64,7 @@ class EquipmentDetails(models.Model):
         self.site_contact = self.client.site_contact
         self.site_phone = self.client.site_phone
 
-    @api.model
+    @api.model_create_single
     def create(self, vals):
         vals['site_contact'] = self.env['res.partner'].search([('id', '=', vals['client'])]).site_contact
         vals['site_phone'] = self.env['res.partner'].search([('id', '=', vals['client'])]).site_phone
