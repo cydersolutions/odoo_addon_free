@@ -20,7 +20,7 @@ class JsaQuestions(models.Model):
     active = fields.Boolean(default=True)
     question = fields.Char('Question')
 
-    @api.model_create_multi
+    @api.model_create_single
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('jsa.questions')
         return super(JsaQuestions, self).create(vals)
