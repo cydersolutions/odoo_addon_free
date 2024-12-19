@@ -16,7 +16,7 @@ class EquipmentDetails(models.Model):
     location = fields.Char('Equipment Location')
     address = fields.Char('Equipment Address')
     model = fields.Char('Model')
-    serial_no = fields.Char('Serial Number', copy=False, required=True)
+    serial_no = fields.Char('Serial Number', copy=False)
     image = fields.Image(string="Image")
     street = fields.Char('Street')
     street2 = fields.Char('Street2')
