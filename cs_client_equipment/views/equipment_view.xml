@@ -15,7 +15,6 @@
                 <field name="asset_tag" optional="show"/>
                 <field name="serial_no" optional="show"/>
                 <field name="location" optional="hide"/>
-                <field name="warranty_expiration" optional="hide"/>
             </list>
         </field>
     </record>
@@ -46,7 +45,6 @@
                                 <field name="country" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
                             </div>
                             <field name="location"  placeholder="i.e.. Rear wall next to the door"/>
-                            <field name="warranty_expiration" />
                         </group>
                         <group>
                             <field name="manufacturer_id"/>

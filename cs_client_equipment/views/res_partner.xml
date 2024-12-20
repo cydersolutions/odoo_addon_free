@@ -17,11 +17,11 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
-                <button string="Equipment" name="listEquipment" class="oe_stat_button" icon="fa-tachometer" type="object">
-                    <div class="o_stat_info">
-                        <span class="o_stat_text">Equipment</span>
-                        <field name="equipment_count"/>
-                    </div>
+                <button name="listEquipment"
+                        class="oe_stat_button"
+                        icon="fa-tachometer"
+                        type="object">
+                    <field name="equipment_count" widget="statinfo" string="Equipment"/>
                 </button>
             </xpath>
         </field>

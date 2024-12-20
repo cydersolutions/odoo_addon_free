@@ -28,7 +28,7 @@ class EquipmentDetails(models.Model):
     location = fields.Char('Equipment Location')
     address = fields.Char('Equipment Address')
     model = fields.Char('Model')
-    serial_no = fields.Char('Serial Number', copy=False, required=True)
+    serial_no = fields.Char('Serial Number', copy=False)
     image = fields.Image(string="Image")
     street = fields.Char('Street')
     street2 = fields.Char('Street2')
@@ -36,7 +36,6 @@ class EquipmentDetails(models.Model):
     city = fields.Char('City')
     state = fields.Many2one("res.country.state", string='State')
     country = fields.Many2one('res.country', string='Country')
-    warranty_expiration = fields.Date(string="Warranty Expiration")
     site_contact = fields.Char(string="Site Contact")
     site_phone = fields.Char(string="Site Phone")
 
