@@ -40,7 +40,7 @@ class EquipmentJobs(models.Model):
     note = fields.Html(string='Note')
     site_contact = fields.Char(string="Site Contact")
     site_phone = fields.Char(string="Site Phone")
-    warranty_expiration = fields.Date(string="Warranty Expiration")
+    # warranty_expiration = fields.Date(string="Warranty Expiration")
     owner = fields.Many2one('res.partner', string="Owner")
 
     @api.onchange('equipment')
@@ -55,7 +55,7 @@ class EquipmentJobs(models.Model):
         self.state = self.equipment.state
         self.country = self.equipment.country
         self.note = self.equipment.note
-        self.warranty_expiration = self.equipment.warranty_expiration
+        # self.warranty_expiration = self.equipment.warranty_expiration
         self.owner = self.equipment.client
         self.asset_tag = self.equipment.asset_tag
 

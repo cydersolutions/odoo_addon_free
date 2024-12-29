@@ -11,12 +11,12 @@
 #################################################################################
 
 {
-    'name': 'Client Equipment (Updated for 18.0)',
-    'version': '1.0.5',
+    'name': 'Client Equipment',
+    'version': '18.0.1.0.5',
     'category': 'Productivity',
     'author': 'Cyder Solutions',
     'website': 'https://www.cyder.com.au',
-    'sequence': -40,
+    'sequence': -45,
     'summary': 'Client Equipment Base',
     'description': """Client Equipment Management""",
     'depends':['mail', 'hr'],
