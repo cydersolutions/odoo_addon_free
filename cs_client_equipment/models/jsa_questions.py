@@ -7,10 +7,10 @@
 #
 # This module is copyright property of the author mentioned above.
 # You can't redistribute/reshare/recreate it for any purpose.
-#
 #################################################################################
 
 from odoo import api, fields, models
+
 class JsaQuestions(models.Model):
     _name = "jsa.questions"
     _description = "Jsa Questions"
@@ -20,7 +20,9 @@ class JsaQuestions(models.Model):
     active = fields.Boolean(default=True)
     question = fields.Char('Question')
 
-    @api.model_create_single
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('jsa.questions')
-        return super(JsaQuestions, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get('name'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('jsa.questions')
+        return super().create(vals_list)

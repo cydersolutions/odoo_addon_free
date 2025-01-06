@@ -7,7 +7,6 @@
 #
 # This module is copyright property of the author mentioned above.
 # You can't redistribute/reshare/recreate it for any purpose.
-#
 #################################################################################
 
 from odoo import api, fields, models, _
@@ -38,37 +37,28 @@ class EquipmentDetails(models.Model):
     country = fields.Many2one('res.country', string='Country')
     site_contact = fields.Char(string="Site Contact")
     site_phone = fields.Char(string="Site Phone")
-
     note = fields.Html(string='Note')
     history = fields.Html('History')
-
     latitude = fields.Float('Latitude', digits=(10, 7))
     longitude = fields.Float('Longitude', digits=(10, 7))
     file_ids = fields.Many2many('ir.attachment', string="Documents", copy=False)
     jobs = fields.One2many('equipment.jobs', 'equipment', string='Jobs')
 
-
-    # @api.model
-    # def geo_localize(self, street='', zip='', city='', state='', country=''):
-    #     geo_obj = self.env['base.geocoder']
-    #     search = geo_obj.geo_query_address(street=street, zip=zip, city=city, state=state, country=country)
-    #     result = geo_obj.geo_find(search, force_country=country)
-    #     if result is None:
-    #         search = geo_obj.geo_query_address(city=city, state=state, country=country)
-    #         result = geo_obj.geo_find(search, force_country=country)
-    #     return result
-
     @api.onchange('client')
     def onchange_client(self):
-        self.site_contact = self.client.site_contact
-        self.site_phone = self.client.site_phone
+        for rec in self:
+            if rec.client:
+                rec.site_contact = rec.client.site_contact
+                rec.site_phone = rec.client.site_phone
 
-    @api.model_create_single
-    def create(self, vals):
-        vals['site_contact'] = self.env['res.partner'].search([('id', '=', vals['client'])]).site_contact
-        vals['site_phone'] = self.env['res.partner'].search([('id', '=', vals['client'])]).site_phone
-        res = super(EquipmentDetails, self).create(vals)
-        return res
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('client'):
+                partner = self.env['res.partner'].browse(vals['client'])
+                vals['site_contact'] = partner.site_contact
+                vals['site_phone'] = partner.site_phone
+        return super().create(vals_list)
 
     @api.returns('self', lambda value: value.id)
     def copy(self, default=None):
@@ -76,7 +66,7 @@ class EquipmentDetails(models.Model):
             default = {}
         if not default.get('name'):
             default['name'] = _("%s (copy)", self.name)
-            return super(EquipmentDetails, self).copy(default)
+        return super(EquipmentDetails, self).copy(default)
 
     _sql_constraints = [
         ('unique_equipment_serial_no', 'unique (serial_no)', 'Serial No must be unique.'),
@@ -96,7 +86,3 @@ class EquipmentManufacturer(models.Model):
     _description = "equipment.manufacturer"
 
     name = fields.Char('Manufacturer Name', required=True, translate=True)
-
-
-
-
