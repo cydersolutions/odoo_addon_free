@@ -56,13 +56,6 @@
                             <field name="longitude" widget="maps"/>
                             <field name="site_contact"/>
                             <field name="site_phone"/>
-
-                            <!--                            <button attrs="{'invisible': ['|', ('latitude', '!=', 0), ('longitude', '!=', 0)]}"-->
-                            <!--                                    icon="fa-gear" string="Compute based on address" title="Compute Localization"-->
-                            <!--                                    name="geo_localize" type="object" class="btn btn-link p-0"/>-->
-                            <!--                            <button attrs="{'invisible': [('latitude', '=', 0), ('longitude', '=', 0)]}"-->
-                            <!--                                    icon="fa-refresh" string="Refresh" title="Refresh Localization"-->
-                            <!--                                    name="geo_localize" type="object" class="btn btn-link p-0"/>-->
                         </group>
                     </group>
                     <notebook>
